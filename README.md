@@ -162,4 +162,9 @@ Dentro de la carpeta de view creamos un archivo PokemonGame.vue
 
 __¿cuál crees que será la lógica que irá dentro de este archivo?__
 
+Estaremos utilizadno Coposition API
+
+
+
+
 
