@@ -1,19 +1,32 @@
 import {onMounted, ref} from 'vue';
-import { GameStatus} from '../interface/game-status.enum';
 import { PokemonApi } from '../api/pokemonApi';
-import type { PokemonListResponse } from '../interface';
+
+import { GameStatus, type PokemonListResponse, type Pokemon } from '../interface';
 
 
 export const usePokemonGame = () => {
     const gameStatus = ref<GameStatus>(GameStatus.Playing);
 
-    const getPokemons = async () =>{
+
+    const getPokemons = async (): Promise<Pokemon[]> =>{
         const pokemonApi = new PokemonApi();
         const response = await pokemonApi.get<PokemonListResponse>('/?limit=151'); 
-        console.log(response.data);
-    };
-    onMounted(()=>{
-        getPokemons();
+
+        const pokemonArray = response.data.results.map(pokemon =>{
+            const urlParts = pokemon.url.split('/');
+            const id = urlParts[urlParts.length -2 ] ?? 0;
+            return {
+                id: +id,
+                name: pokemon.name
+            }
+             
+    
+    });
+        return pokemonArray.sort(()=>Math.random() - 0.5);
+};
+    onMounted(async()=>{
+        const pokemons = await getPokemons();
+        console.log(pokemons);
     })
 
     return {

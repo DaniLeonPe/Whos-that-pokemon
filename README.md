@@ -23,6 +23,8 @@ Repositorio dedicado a la actividad de VUE del módulo DAD acerca de la adivinac
     - [Conexion a la api](#conexion-a-la-api)
     - [Tipando la petición a la api](#tipando-la-petición-a-la-api)
         - [instalacion de axios](#instalacion-de-axios)
+- [Reto 5](#reto5)
+    - [Modificando método getPokemons()](#modificando-método-getPokemons)
 
 
 
@@ -429,4 +431,64 @@ Y finalmente modificamos usePokemonGame.ts para que use este nuevo tipado
 
 Y aqui finaliza el cuarto reto
 
+
+## Reto5 
+
+### Modificando método getPokemons()
+
+Vamos a modificar el método getPokemons() para quedarnos solo con el nombre y el id 
+
+Creamos un nuevo archivo llamado __pokemon.interface.ts__ dentro de la carpeta __interface__ 
+
+<img src="./capturas/cap40.PNG" />
+
+
+y añadiremos el siguiente contenido:
+
+<img src="./capturas/cap41.PNG" />
+
+lo exportamos desde __index.ts__ como hicimos anteriormente
+
+Modificamos el metodo getPokemons() de la siguiente manera:
+
+<img src="./capturas/cap42.PNG" />
+
+> ¿Qué es lo que estamos haciendo?
+>Estamos obteniendo los datos de la PokeApi y lo transformamos en un array de objetos Pokemon
+>¿Para qué sirve la línea de código __const id = urlParts[urlParts.length -2 ] ?? 0;__?
+>Sirve para extraer el id del Pokemon desde la URL que viene en la respuesta de la PokeApi
+>urlParts: es el resultado de dividir la url del Pokemon en partes utilizando el caracter __/__ como delimitador
+>siendo como ejemplo la url del Pokemon __https://pokeapi.co/api/v2/pokemon/1__ quedaria de la siguiente manera: 
+
+```bash
+urlParts = ["https:", "", "pokeapi.co", "api", "v2", "pokemon", "1", ""];
+
+```
+
+> urlParts.length -2: Obtiene el penultimo elemento del array anterior siendo este el id del Pokemon
+>
+>?? 0 : Devuelve el valor de la izquierda si no es null ni undefined si no usara el valor por defecto 0
+
+
+Ahora llamaremos a nuestro método modificando el onMounted() de la siguiente manera:
+
+<img src="./capturas/cap43.PNG" />
+
+Mostramos el resultado en la consola:
+
+<img src="./capturas/cap44.PNG" />
+
+Vemos como resultado nos muestra una lista de los 151 pokemon ordenados por su id
+
+Vamos a hacer que nuestra lista nos la devuelva de forma aleatoria
+>¿Se te ocurre como?
+> Modificamos el return del método getPokemons() usando la funcion __sort__ junto a la de __Math.random()__
+
+<img src="./capturas/cap45.PNG" />
+
+Dejando como resultado la siguiente consola:
+
+<img src="./capturas/cap46.PNG" />
+
+y aqui finalizamos el quinto reto
 </div>
