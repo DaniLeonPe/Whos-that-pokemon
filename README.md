@@ -19,6 +19,11 @@ Repositorio dedicado a la actividad de VUE del módulo DAD acerca de la adivinac
 - [Reto 3](#reto3)
     - [PokemonPicture.vue](#pokemonpicturevue)
     - [PokemonOptions.vue](#pokemonoptionsvue)
+- [Reto 4](#reto4)
+    - [Conexion a la api](#conexion-a-la-api)
+    - [Tipando la petición a la api](#tipando-la-petición-a-la-api)
+        - [instalacion de axios](#instalacion-de-axios)
+
 
 
 
@@ -310,7 +315,9 @@ body{
 Y aqui finaliza el tercer reto
 
 
-## Reto4 - Conexion a la api
+## Reto4
+
+### conexion a la api
 
 En este reto vamos a conectarnos a la PokeApi pero antes que nada dentro de la carpeta __src/assets/__ copiarepos y pegaremos el contenido dado en la actividad __animation.css__ siendo esta una animación que usaremos cuando desvelemos el Pokémon.
 
@@ -337,6 +344,8 @@ export enum GameStatus {
   Lost = 'lost'
 }
 ```
+
+### Tipando la petición a la api
 
 Ahora crearemos un nuevo arvhivo que se llamara index.ts que sera nuestro __archivo de barril__ 
 
@@ -365,6 +374,7 @@ Dentro de la carpeta __pokemon__ crearemos una nueva llamda __api__ y crearemos 
 
 <img src="./capturas/cap32.png" />
 
+### Instalacion de axios
 
 Ahora instalamos axios en nuestro proyecto
 
