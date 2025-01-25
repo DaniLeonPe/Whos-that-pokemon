@@ -43,7 +43,7 @@ npm create vue@latest
 
 A continuación, VueJS nos preguntara que configuracion queremos en nuestro proyecto siendo esta la siguiente:
 
-<img src="./capturas/cap1.PNG" />
+<img src="./capturas/cap1.png" />
 
 Respondemos a las siguientes preguntas
 
@@ -72,13 +72,13 @@ hacemos las instalaciones necesarias
 ```bash
 npm install
 ```
-<img src="./capturas/cap2.PNG" />
+<img src="./capturas/cap2.png" />
 
 ```bash
 npm run format
 ```
 
-<img src="./capturas/cap3.PNG" />
+<img src="./capturas/cap3.png" />
 
 
 
@@ -88,13 +88,13 @@ y por ultimo inicializamos el proyecto
 npm run dev
 ```
 
-<img src="./capturas/cap4.PNG" />
+<img src="./capturas/cap4.png" />
 
 y accedemos a la direccion local que en este caso es: __http://localhost:5173/
 
 y vemos que  funciona correctamente
 
-<img src="./capturas/cap5.PNG" />
+<img src="./capturas/cap5.png" />
 
 
 Nuestro Pokemon Game lo vamos a realizar siguiendo Composition API y además, nuestra estructura de archivos va a estar basada en screaming architecture.
@@ -109,7 +109,7 @@ Nuestro Pokemon Game lo vamos a realizar siguiendo Composition API y además, nu
 
 Ahora, vamos a modificar y borrar todo lo que no necesitamos que nos ha creado de forma automática VueJS: 
 
-<img src="./capturas/cap6.PNG" />
+<img src="./capturas/cap6.png" />
 
 
 El contenido de App.vue y deja la estructura básica de VueJS teniendo en cuenta que usaremos Composition API. Recuerda que vamos a utilizar TS en lugar de JS, 
@@ -122,11 +122,11 @@ Añade un mensaje de Hola mundo en App.vue
 
 Se veria el codigo de la siguiente manera:
 
-<img src="./capturas/cap7.PNG" />
+<img src="./capturas/cap7.png" />
 
 Siendo como resultado la siguiente vista:
 
-<img src="./capturas/cap8.PNG" />
+<img src="./capturas/cap8.png" />
 
 
 ## Limpieza de la estructura de la aplicacion
@@ -134,11 +134,11 @@ Siendo como resultado la siguiente vista:
 En la carpeta de assets, borra los archivos base.css y logo.svg
 Cambia el nombre de main.css de la carpeta assets a styles.css y modifica la ruta en el archivo main.ts para que funcione correctamente nuestra hoja de estilo.
 
-<img src="./capturas/cap9.PNG" />
+<img src="./capturas/cap9.png" />
 
 Ejecuta el comando npm run dev y muestra el resultado.
 
-<img src="./capturas/cap10.PNG" />
+<img src="./capturas/cap10.png" />
 
 ## Tailwind
 
@@ -157,19 +157,19 @@ npx tailwindcss init -p
 
 Añadimos los Paths de los ficheros en tailwind.config.js
 
-<img src="./capturas/cap11.PNG" />
+<img src="./capturas/cap11.png" />
 
 Añadimos tailwind al CSS
 
-<img src="./capturas/cap12.PNG" />
+<img src="./capturas/cap12.png" />
 
 Probamos añadiendole una clase al h1 del hola mundo que pusimos anteriormente
 
-<img src="./capturas/cap13.PNG" />
+<img src="./capturas/cap13.png" />
 
 Verificamos el funcionamiento utilizando npm run dev
 
-<img src="./capturas/cap14.PNG" />
+<img src="./capturas/cap14.png" />
 
 Y aqui finaliza el primer reto
 
@@ -183,7 +183,7 @@ Como no cumplimos con la filosofia de screamin architecture vamos a comenzar mod
 
 primero eliminamos la carpeta components y creamos una nueva carpeta dentro de src llamada modules y dentro de esta una llamada pokemon 
 
-<img src="./capturas/cap15.PNG" />
+<img src="./capturas/cap15.png" />
 
 Dentro de la carpeta pokemon creamos las carpetas composables
 
@@ -197,7 +197,7 @@ Dentro de la carpeta pokemon creamos las carpetas composables
 Creamos las carpetas components y views.
 
 
-<img src="./capturas/cap16.PNG" />
+<img src="./capturas/cap16.png" />
 
 
 Dentro de la carpeta de view creamos un archivo PokemonGame.vue
@@ -252,7 +252,7 @@ Utilizando la etiqueta __<section>__ podemos separar nuestra aplicación en secc
 
 >Viendose finalmente de la siguiente manera:
 
-<img src="./capturas/cap17.PNG" />
+<img src="./capturas/cap17.png" />
 
 
 __Utilizando una directiva de VueJS, ¿cómo ocultaríamos esta sección por completo?__
