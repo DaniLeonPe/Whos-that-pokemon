@@ -43,7 +43,7 @@ npm create vue@latest
 
 A continuación, VueJS nos preguntara que configuracion queremos en nuestro proyecto siendo esta la siguiente:
 
-<img src="./capturas/cap1.png" />
+<img src="./capturas/cap1.PNG" />
 
 Respondemos a las siguientes preguntas
 
@@ -72,13 +72,13 @@ hacemos las instalaciones necesarias
 ```bash
 npm install
 ```
-<img src="./capturas/cap2.png" />
+<img src="./capturas/cap2.PNG" />
 
 ```bash
 npm run format
 ```
 
-<img src="./capturas/cap3.png" />
+<img src="./capturas/cap3.PNG" />
 
 
 
@@ -88,13 +88,13 @@ y por ultimo inicializamos el proyecto
 npm run dev
 ```
 
-<img src="./capturas/cap4.png" />
+<img src="./capturas/cap4.PNG" />
 
 y accedemos a la direccion local que en este caso es: __http://localhost:5173/
 
 y vemos que  funciona correctamente
 
-<img src="./capturas/cap5.png" />
+<img src="./capturas/cap5.PNG" />
 
 
 Nuestro Pokemon Game lo vamos a realizar siguiendo Composition API y además, nuestra estructura de archivos va a estar basada en screaming architecture.
@@ -109,7 +109,7 @@ Nuestro Pokemon Game lo vamos a realizar siguiendo Composition API y además, nu
 
 Ahora, vamos a modificar y borrar todo lo que no necesitamos que nos ha creado de forma automática VueJS: 
 
-<img src="./capturas/cap6.png" />
+<img src="./capturas/cap6.PNG" />
 
 
 El contenido de App.vue y deja la estructura básica de VueJS teniendo en cuenta que usaremos Composition API. Recuerda que vamos a utilizar TS en lugar de JS, 
@@ -122,11 +122,11 @@ Añade un mensaje de Hola mundo en App.vue
 
 Se veria el codigo de la siguiente manera:
 
-<img src="./capturas/cap7.png" />
+<img src="./capturas/cap7.PNG" />
 
 Siendo como resultado la siguiente vista:
 
-<img src="./capturas/cap8.png" />
+<img src="./capturas/cap8.PNG" />
 
 
 ## Limpieza de la estructura de la aplicacion
@@ -134,11 +134,11 @@ Siendo como resultado la siguiente vista:
 En la carpeta de assets, borra los archivos base.css y logo.svg
 Cambia el nombre de main.css de la carpeta assets a styles.css y modifica la ruta en el archivo main.ts para que funcione correctamente nuestra hoja de estilo.
 
-<img src="./capturas/cap9.png" />
+<img src="./capturas/cap9.PNG" />
 
 Ejecuta el comando npm run dev y muestra el resultado.
 
-<img src="./capturas/cap10.png" />
+<img src="./capturas/cap10.PNG" />
 
 ## Tailwind
 
@@ -157,19 +157,19 @@ npx tailwindcss init -p
 
 Añadimos los Paths de los ficheros en tailwind.config.js
 
-<img src="./capturas/cap11.png" />
+<img src="./capturas/cap11.PNG" />
 
 Añadimos tailwind al CSS
 
-<img src="./capturas/cap12.png" />
+<img src="./capturas/cap12.PNG" />
 
 Probamos añadiendole una clase al h1 del hola mundo que pusimos anteriormente
 
-<img src="./capturas/cap13.png" />
+<img src="./capturas/cap13.PNG" />
 
 Verificamos el funcionamiento utilizando npm run dev
 
-<img src="./capturas/cap14.png" />
+<img src="./capturas/cap14.PNG" />
 
 Y aqui finaliza el primer reto
 
@@ -183,7 +183,7 @@ Como no cumplimos con la filosofia de screamin architecture vamos a comenzar mod
 
 primero eliminamos la carpeta components y creamos una nueva carpeta dentro de src llamada modules y dentro de esta una llamada pokemon 
 
-<img src="./capturas/cap15.png" />
+<img src="./capturas/cap15.PNG" />
 
 Dentro de la carpeta pokemon creamos las carpetas composables
 
@@ -197,7 +197,7 @@ Dentro de la carpeta pokemon creamos las carpetas composables
 Creamos las carpetas components y views.
 
 
-<img src="./capturas/cap16.png" />
+<img src="./capturas/cap16.PNG" />
 
 
 Dentro de la carpeta de view creamos un archivo PokemonGame.vue
@@ -217,7 +217,7 @@ Utilizando la etiqueta __<section>__ podemos separar nuestra aplicación en secc
 
   - Una sección que tenga un mensaje que indique al usuario que: ``Espere por favoy y Cargando Pokémon`` de tal manera que:
 
-  <img src="./capturas/cap18.png" />
+  <img src="./capturas/cap18.PNG" />
 
   las clases utilizadas son de Tailwind para darle un estilo a nuestra sección siendo:
 
@@ -242,35 +242,35 @@ Utilizando la etiqueta __<section>__ podemos separar nuestra aplicación en secc
 >
 >   Antes que nada hay que añadir un export del archivo PokemonGame.vue
 
-   <img src="./capturas/cap19.png" />
+   <img src="./capturas/cap19.PNG" />
 
 >y en app.vue añadiremos el componente PokemonGame
 
-<img src="./capturas/cap20.png" />
+<img src="./capturas/cap20.PNG" />
 
 </br>
 
 >Viendose finalmente de la siguiente manera:
 
-<img src="./capturas/cap17.png" />
+<img src="./capturas/cap17.PNG" />
 
 
 __Utilizando una directiva de VueJS, ¿cómo ocultaríamos esta sección por completo?__
 
 La podemos ocultar de varias maneras, pero en este caso hemos optado por utilizar v-show.
 
-<img src="./capturas/cap21.png" />
+<img src="./capturas/cap21.PNG" />
 
 Creamos una nueva seccion igual a la anterior pero que muestre al usuario el mensaje: ``¿Cuál es este pokémon?``
 
     Primero creamos las clases __PokemonPicture__ y __PokemonOptions__ dentro de la carpeta components.
 
-<img src="./capturas/cap22.png" />
+<img src="./capturas/cap22.PNG" />
 
 
 y creamos la seccion de la siguiente manera:
 
-<img src="./capturas/cap23.png" />
+<img src="./capturas/cap23.PNG" />
 
 Y aqui finaliza el segundo reto
 
@@ -280,28 +280,28 @@ Y aqui finaliza el segundo reto
 ### PokemonPicture.vue
 Lo que vamos a hacer en este componente es mostrar una imagen directamente desde PokeApi (Gengar para ser más exactos):
 
-<img src="./capturas/cap25.png" />
+<img src="./capturas/cap25.PNG" />
 
 Quedando como resultado la siguiente vista:
 
-<img src="./capturas/cap24.png" />
+<img src="./capturas/cap24.PNG" />
 
 
 Ahora nos interesa que el pokemon no se vea tan claro y para ello añadimos la clase brightness-0 a la imagen y tambien le añadimos un altura a la imagen de 200px.
 
 Quedando como resultado la siguiente vista:
 
-<img src="./capturas/cap26.png" />
+<img src="./capturas/cap26.PNG" />
 
 ### PokemonOptions.vue
 
 En cuanto al componente PokemonOptions crearemos una lista con 4 botones en cada elemento iniciales:
 
-<img src="./capturas/cap27.png" />
+<img src="./capturas/cap27.PNG" />
 
 Una vez realizado, añadiremos unos estilos a los botones de la lista quedando una vista de la siguiente manera: 
 
-<img src="./capturas/cap28.png" />
+<img src="./capturas/cap28.PNG" />
 
 por ultimo necesitamos que el fondo de nuestra aplicacion sea el color __#f1f1f1__ colocandolo en el archivo __assets/styles.css__ como:
 
@@ -321,13 +321,13 @@ Y aqui finaliza el tercer reto
 
 En este reto vamos a conectarnos a la PokeApi pero antes que nada dentro de la carpeta __src/assets/__ copiarepos y pegaremos el contenido dado en la actividad __animation.css__ siendo esta una animación que usaremos cuando desvelemos el Pokémon.
 
-<img src="./capturas/cap29.png" />
+<img src="./capturas/cap29.PNG" />
 
 Ahora emepzaremos con la lógica de nuestra aplicación:
 
 En primer lugar crearemos un archivo que se llamara __usePokemonGame.ts__ dentro de la carpeta __src/composables__ y dentro de este archivo vamos a comenzar con toda la lógica de nuestra aplicación.	
 
-<img src="./capturas/cap30.png" />
+<img src="./capturas/cap30.PNG" />
 
 Nuestro juego va a tener 3 estados los cuales los almacenaremos en una propiedad reactiva:
 
@@ -355,7 +355,7 @@ Ahora crearemos un nuevo arvhivo que se llamara index.ts que sera nuestro __arch
 
 volvamos a nuestro archivo usePokemonGame.ts
 
-<img src="./capturas/cap31.png" />
+<img src="./capturas/cap31.PNG" />
 
 > ¿Qué es lo que estamos haciendo con el código hasta ahora?
 >
@@ -372,7 +372,7 @@ Ahora vamos a conectarnos con nuesta PokeApi para poder recuperar una lista de l
 
 Dentro de la carpeta __pokemon__ crearemos una nueva llamda __api__ y crearemos un archivo llamado __pokemonApi.ts__
 
-<img src="./capturas/cap32.png" />
+<img src="./capturas/cap32.PNG" />
 
 ### Instalacion de axios
 
@@ -384,20 +384,20 @@ npm install axios
 
 Dentro del archivo pokemonApi.ts vamos a crear una clase llamada PokemonApi que nos permitira recuperar los pokemons de la PokeApi
 
-<img src="./capturas/cap33.png" />
+<img src="./capturas/cap33.PNG" />
 
 En usePokemonGame.ts lo que tenemos que hacer ahora es obtener esa informacion sobre los 151 pokemons:
 
-<img src="./capturas/cap34.png" />
+<img src="./capturas/cap34.PNG" />
 
 
 en PokemonGame.vue vamos a añadir un import para el usePokemonGame.ts
 
-<img src="./capturas/cap35.png" />
+<img src="./capturas/cap35.PNG" />
 
 dejando como resultado el siguiente console log:
 
-<img src="./capturas/cap36.png" />
+<img src="./capturas/cap36.PNG" />
 
 
 Los datos que hemos obtenido no son técnicamente los que nos interesan ya que solo necesitamos el id y el nombre de los Pokemon. Para ello vamos a crear un tipado estricto para que podamos tipar los resultados de las peticiones HTTP que hagamos a la API:
@@ -411,7 +411,7 @@ En Visual Studio dentro de la carpeta __interfaces__ creamos un nuevo archivo ll
 
 Usando la extension Paste JSON as Code pegamos el contenido de la anterior peticion poniendole como nivel superior __PokemonListResponse__
 
-<img src="./capturas/cap37.png" />
+<img src="./capturas/cap37.PNG" />
 
 Exportamos este nuevo archivo en nuestro archivo de barril
 
@@ -421,11 +421,11 @@ export * from './pokemon-list.response';
 
 Modificamos pokemonApi.ts para que use este nuevo tipado
 
-<img src="./capturas/cap38.png" />
+<img src="./capturas/cap38.PNG" />
 
 Y finalmente modificamos usePokemonGame.ts para que use este nuevo tipado
 
-<img src="./capturas/cap39.png" />
+<img src="./capturas/cap39.PNG" />
 
 Y aqui finaliza el cuarto reto
 
