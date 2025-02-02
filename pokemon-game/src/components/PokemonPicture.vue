@@ -1,18 +1,34 @@
 <template>
     <section class="flex flex-col justify-center">
-    <img class="brightness-0 h-[200px]" src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png'>
+    <img v-if="!showPokemon" :src="pokemonImage" class="brightness-0 h-[200px]" />
+    <img v-else :src="pokemonImage" class="h-[200px] fade-in" alt="pokemon image"/>
     </section>
 </template>
 
 
-<script lang="ts">
+<script setup lang="ts">
+import { computed } from 'vue';
+
+interface Props{
+  pokemonId: number;
+  showPokemon: boolean;
+}
+
+
+
+
+const props = withDefaults(defineProps<Props>(),{
+  showPokemon: false,
+});
+
+const pokemonImage = computed(
+  ()=> `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${ props.pokemonId }.png`
+  )
+
+
   
 
-  export default{
-    name:'PokemonPicture',
 
-    }
-  
 </script>
 
 
