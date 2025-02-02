@@ -492,3 +492,234 @@ Dejando como resultado la siguiente consola:
 
 y aqui finalizamos el quinto reto
 </div>
+
+
+
+## Reto 6
+
+### FINAL
+
+
+Para continuar, lo que debemos hacer es poder determinar varias propiedades computadas que vamos a necesitas, por ejemplo: cuando nuestra página está cargando. Hay un momento en la petición HTTP está trayendo la información, por tanto, podemos crear una propiedad computada para que se cambie automáticamente. 
+
+> ¿Qué es una propiedad computada?
+>
+>Es una propiedad reactiva que se recalcula automáticamente cuando se cambian los valores de sus dependencias alacenadose en cache para optimizar el rendimiento.
+
+En usePokemonGame.ts crea una nueva propiedad computada llamada isLoading de la siguiente forma:
+
+<img src="./capturas/cap47.PNG" />
+
+<img src="./capturas/cap48.PNG" />
+
+Lo que estamos haciendo aquí es determinar si el array de Pokemon está o no vacío, de tal forma que podamos mostrar o no cierta información en base a ello, como por ejemplo:
+    Mostrar en PokemonGame.vue el mensaje de __"Espere por favor"__ y __"Cargando Pokemons"__:
+
+<img src="./capturas/cap49.PNG" />
+
+como lo que hemos ha sido modificar el valor de la directiva v-if con la propiedad computada y añadido v-else cuando cambie el valor inicial de esa propiedad.
+
+Al probar lo anterior, notarás que el cambio es prácticamente imperceptible. Por tanto:
+
+    Añade una promesa en onMounted() del archivo usePokemonGame usando la función setTimeout para que al cargar la respuesta, tarde 1000 milésimas de segundo.
+
+    Comprueba que ahora se modifica el componente.
+    Una vez compruebes que funciona correctamente, puedes borrarlo, ya que no nos va a hacer falta
+
+<img src="./capturas/cap50.PNG" />
+
+
+Ahora vamos a crear otra propiedad reactiva a la que vamos a llamar pokemonOptions
+<img src="./capturas/cap51.PNG" />
+
+
+    Estos pokemonOption van a ser las opciones de los Pokemons que vamos a mostrar, y por tanto, tenemos que crear una nueva función para manejarlas.
+    En usePokemonGame añade:
+
+<img src="./capturas/cap52.PNG" />
+
+
+> ¿Cómo funciona este fragmento de código? Muestra por consola pokemonOptions.value para comprobar que efectivamente nos está devolviendo 4 pokemons como propiedades reactivas
+>
+>Maneja el estado del juego donde se cargan opciones de Pokemon y se dividen en grupos.
+>
+>La funcion getNextOption() es la que se encarga de cambiar el estado del juego y de devolver los pokemons que se van a mostrar.
+
+>¿Cómo determinamos cuál es el Pokemon correcto? 
+Tenemos que ser capaces de determinar cual es el Pokemon correcto. Vamos a hacerlo mediante una propiedad computada. Para ello vamos a crear:
+
+<img src="./capturas/cap53.PNG" />
+
+
+
+
+
+De esta forma, lo que estamos haciendo es, obtener un valor que va desde 0 hasta el largo de elementos que tenemos en pokemonOptions (4 en nuestro caso).
+
+<img src="./capturas/cap54.PNG" />
+
+
+Vamos a añadirlo en nuestro componente:
+
+<img src="./capturas/cap55.PNG" />
+
+
+Comprueba que el Pokémon que aparece está en la lista que aparece por consola y no que siempre ocupa la primera posición.
+Hasta este punto, tenemos esto:
+
+<img src="./capturas/cap56.PNG" />
+
+Ahora lo que debemos hacer es saber cual es la imagen correspondiente con ese Pokémon.
+
+<img src="./capturas/cap57.PNG" />
+
+>¿Qué es lo que estamos haciendo?
+>
+> En PokemonPicture le añadimos el id del pokemonrandom
+
+Vamos a PokemonPicture.vue y lo que tenemos que hacer es:
+Definir las props
+
+<img src="./capturas/cap58.PNG" />
+
+
+Hacer el bind de src usando una propiedad computada: 
+
+<img src="./capturas/cap59.PNG" />
+
+
+
+donde el enlace se modifica de la siguiente forma:
+
+<img src="./capturas/cap60.PNG" />
+
+
+Muestra el resultado y comprueba que es correcto.
+
+
+<img src="./capturas/cap62.PNG" />
+
+
+Ahora necesitamos crear otra propiedad que se encargue de mostrar la imagen original si se ha seleccionado la opción correcta. De la misma forma que lo anterior, hacemos:
+
+<img src="./capturas/cap63.PNG" />
+
+
+En PokemonPicture.vue:
+
+<img src="./capturas/cap64.PNG" />
+
+Comprueba que ahora se visualiza la imagen del Pokémon original.
+
+<img src="./capturas/cap65.PNG" />
+
+En v-else, añade la clase que tenemos en animations.css para que se aplique cuando se visualice la imagen original.
+
+<img src="./capturas/cap66.PNG" />
+
+
+Siguiendo con nuestro PokemonGame, nosotros ya podemos determinar cuando se debe visualizar la imagen correcta. ¿Cómo? Pues usando la propiedad que ya habíamos creado llamada GameStatus. Teníamos 3 estados: 'Playing', 'Won', y 'Lost'. Por tanto, modificamos el código:
+
+<img src="./capturas/cap67.PNG" />
+
+Se muestra el Pokémon si y solo si NO se está jugando.
+
+Mostrar las posibles opciones:
+Nosotros ya tenemos creado nuestras opciones en pokemonOpcions, por tanto, en PokemonGame.vue:
+
+
+<img src="./capturas/cap68.PNG" />
+
+Ahora, en PokemonOptions.vue, borramos la lista que teniamos de ejemplo y la sustituimos por botones:
+
+
+<img src="./capturas/cap69.PNG" />
+
+>Explica el funcionamiento del componente hasta ahora y muestra el resultado de la aplicación.
+>
+> Esta recorriendo las opciones que recibe y las convierte en botones.
+
+<img src="./capturas/cap70.PNG" />
+
+
+Ahora tenemos que saber, cuando el usuario haga click sobre un botón, emitir cual es esa opción, para ello creamos defineEmits: 
+
+<img src="./capturas/cap71.PNG" />
+
+y en PokemonGame.vue:
+
+<img src="./capturas/cap72.PNG" />
+
+
+Ahora, en la consola debería aparecer el id del Pokemon al que estamos haciendo click.
+
+<img src="./capturas/cap73.PNG" />
+
+Ahora vamos a centrarnos en saber cuando el jugador gana.
+    -La lógica es muy sencilla. Será true cuando el id de la imagen del Pokemon sea igual al id que se emite cuando el usuario hace click sobre una opción.
+    -Recuerden que teníamos una variable llamada GameStatus. 
+    -En nuestro composable, vamos a crear una nueva función llamada checkAnswer. Esta función recibe el id de la opción que el usuario está pulsando y tendremos que verificar si ese id es igual el id del Pokemon. 
+    -Si gana, el gameStatus cambia de valor. Pasará de Playing a Won. 
+    -Cuando el usuario gana, vamos a lanzar una animación. Para ello: 
+        -https://www.npmjs.com/package/canvas-confetti
+        -Instala el paquete en el proyecto.
+>   npm install canvas-confetti
+>   
+
+        -Importa el paquete en el composable. (Vale, aquí nos va a saltar un error ya que el paquete está pensado para javascript y no typescript. Para arreglarlo tendremos que ejecutar otro comando: npm i --save-dev @types/canvas-confetti, lo que estamos haciendo con este comando es instalar el paquete DT (archivo de definición) y eso debería hacer que el error desaparezca).
+>   npm i --save-dev @types/canvas-confetti
+>   import confetti from 'canvas-confetti';
+        -Ahora, si la persona gana, vamos a lanzar la animación
+
+
+<img src="./capturas/cap74.PNG" />
+
+<img src="./capturas/cap75.PNG" />
+
+Comprueba que funciona.
+
+
+<img src="./capturas/cap76.PNG" />
+
+Vamos a seguir completando nuestra función, ¿qué pasa si el usuario pierde?
+Si el usuario no gana, tendremos que cambiar el status a Lost.
+
+<img src="./capturas/cap77.PNG" />
+
+Una vez que se determine que el usuario perdió, hay que bloquear los botones restantes para evitar que el usuario haga click hasta encontrar la respuesta correcta. 
+Vamos a añadir una nueva propiedad en <PokemonOptions /> llamada block-selection. Será un booleano que recibiremos en PokemonOptions.vue y que tendremos que deshabilitar.
+
+
+<img src="./capturas/cap78.PNG" />
+
+<img src="./capturas/cap79.PNG" />
+
+<img src="./capturas/cap80.PNG" />
+
+
+
+Comprueba que funciona.
+
+<img src="./capturas/cap81.PNG" />
+
+Ahora añadimos un boton de reinicio para que el usuario pueda volver a jugar.
+
+
+
+devolvemos todo a una forma inicial y volvemos a cargar el pokemon y sus opciones
+
+<img src="./capturas/cap82.PNG" />
+
+
+
+
+Si el el estado del juego es que no esta en juego se muestra el boton
+<img src="./capturas/cap83.PNG" />
+
+
+quedando como resultado:
+
+<img src="./capturas/cap84.PNG" />
+
+
+Finalizando la tarea.
