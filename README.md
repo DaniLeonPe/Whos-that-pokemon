@@ -25,6 +25,7 @@ Repositorio dedicado a la actividad de VUE del módulo DAD acerca de la adivinac
         - [instalacion de axios](#instalacion-de-axios)
 - [Reto 5](#reto5)
     - [Modificando método getPokemons()](#modificando-método-getPokemons)
+- [Reto 6](#reto6)
 
 
 
