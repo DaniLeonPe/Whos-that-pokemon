@@ -496,7 +496,7 @@ y aqui finalizamos el quinto reto
 
 
 
-## Reto 6
+## Reto6
 
 ### FINAL
 
